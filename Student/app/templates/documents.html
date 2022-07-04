@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            background-color: aqua;
+        }
+        a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+h5 {
+    color:blue;
+
+}
+    </style>
+</head>
+<body>
+    <form method='POST' enctype="multipart/form-data">
+
+        {% csrf_token %}
+    <fieldset>
+        <h5>Upload File</h5>
+        {% comment %} <p>currently : {{user.marksheet_te.url}}</p> {% endcomment %}
+       <p>10 Marksheet: <input type="file" name='x'  default='{{user.marksheet_te}}' id="file" placeholder="" required></p>
+       <h5>Upload File</h5>
+       {% comment %} <p>currently : {{user.marksheet_tw.url}}</p> {% endcomment %}
+       <p>12 Marksheek: <input type="file" value='{{user.marksheet_tw}}' name='xii' id="file" required></p>
+       <h5>Upload File</h5>
+       {% comment %} <p>currently : {{user.marksheet_ug.url}}</p> {% endcomment %}
+       <p>Bachelor Dgree: <input type="file" value='{{user.marksheet_ug}}' name='ug' id="file" required></p>
+       <h5>Upload File</h5>
+       {% comment %} <p>currently : {{user.marksheet_m.url}}</p> {% endcomment %}
+       <p>Master Dgree: <input type="file" value='{{user.marksheet_m}}' name='m' id="file" required></p>
+    </fieldset>
+    <fieldset>
+        <a href="{% url 'mark' %}">Previous</a>
+        <button type='submit'>Submit</button>
+        
+    </fieldset>
+    </form>
+</body>
+</html>

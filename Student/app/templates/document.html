@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3{
+  font-family: Calibri; 
+  font-size: 25pt;         
+  font-style: normal; 
+  font-weight: bold; 
+  color:SlateBlue;
+  text-align: center; 
+  text-decoration: underline
+}
+
+table{
+  font-family: Calibri; 
+  color:white; 
+  font-size: 11pt; 
+  font-style: normal;
+  font-weight: bold;
+  text-align:left; 
+  background-color: SlateBlue; 
+  border-collapse: collapse; 
+  border: 2px solid navy
+}
+table.inner{
+  border: 0px
+}
+
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+ 
+th{
+  text-align: center;
+}
+    </style>
+</head>
+<body>
+    <form method='POST'>
+      {% csrf_token %}
+    <h3>STUDENT DOCUMENT REGISTRATION FORM</h3>
+    <table align="center" cellpadding = "10">
+      <th>
+        <td>
+        
+        <th>Marksheet</th>
+        <th>Parcentage</th>
+        <th>Passing Year</th>
+         </td>
+      </th>
+    <tr>
+        <td>1</td>
+        <td>Class X</td>
+        <td><input type="text" value='{{user.marks_te}}' name="ClassX_Board" maxlength="30" /></td>
+        <td><input type="text" value='{{user.percentage_te}}' name="ClassX_Percentage" maxlength="30" /></td>
+        <td><input type="text" value='{{user.passing_year_te}}' name="ClassX_YrOfPassing" maxlength="30" /></td>
+        </tr>
+         
+        <tr>
+        <td>2</td>
+        <td>Class XII</td>
+        <td><input type="text" value='{{user.marks_tw}}' name="ClassXII_Board" maxlength="30" /></td>
+        <td><input type="text"  value='{{user.percentage_tw}}'  name="ClassXII_Percentage" maxlength="30" /></td>
+        <td><input type="text" value='{{user.passing_year_tw}}' name="ClassXII_YrOfPassing" maxlength="30" /></td>
+        </tr>
+         
+        <tr>
+        <td>3</td>
+        <td>Graduation</td>
+        <td><input type="text" value='{{user.marks_ug}}' name="Graduation_Board" maxlength="30" /></td>
+        <td><input type="text" value='{{user.percentage_ug}}' name="Graduation_Percentage" maxlength="30" /></td>
+        <td><input type="text" value='{{user.passing_year_ug}}' name="Graduation_YrOfPassing" maxlength="30" /></td>
+        </tr>
+         
+        <tr>
+        <td>4</td>
+        <td>Masters</td>
+        <td><input type="text" value='{{user.marks_m}}' name="Masters_Board" maxlength="30" /></td>
+        <td><input type="text" value='{{user.percentage_m}}' name="Masters_Percentage" maxlength="30" /></td>
+        <td><input type="text" value='{{user.passing_year_m}}' name="Masters_YrOfPassing" maxlength="30" /></td>
+        </tr>
+         
+        <tr>
+        <td></td>
+        <td></td>
+        <td align="center">(10 char max)</td>
+        <td align="center">(upto 2 decimal)</td>
+        
+        </tr>
+        </table>
+        <center>
+        <!-- <button type="submit" id="button">Submit Now</button> -->
+
+    
+        <a href="{% url 'profile'%}">Previous</a>
+        <button type="submit" >Next</button>
+
+        </form>
+    </center>
+         
+</body>
+</html>
